@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Cinzel:wght@400;600;700&family=Cairo:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Cinzel', serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-arabic: 'Cairo', sans-serif;
+
+  --color-black: #0a0705;
+  --color-dark: #110d09;
+  --color-dark-card: #1a120b;
+  --color-brown-deep: #3b1f0c;
+  --color-brown: #6b3f1a;
+  --color-brown-light: #a0622a;
+  --color-gold: #c59d5f;
+  --color-gold-light: #e0c080;
+  --color-cream: #f5e9d0;
+  --color-cream-light: #fdf6ec;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-cream selection:bg-gold/30 selection:text-white;
+    font-family: var(--font-arabic);
+  }
+}
+
+@layer utilities {
+  .text-shadow-goldHead {
+    text-shadow: 0 0 40px rgba(197, 157, 95, 0.4);
+  }
+  .text-shadow-brand {
+    text-shadow: 2px 2px 0px rgba(0,0,0,1), 4px 4px 0px rgba(197, 157, 95, 0.3);
+  }
+  .animate-steam {
+    animation: steamRise 2s ease-in-out infinite;
+  }
+}
+
+@keyframes steamRise {
+  0% { transform: scaleY(0.3) translateY(0); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: scaleY(1.1) translateY(-10px); opacity: 0; }
+}
